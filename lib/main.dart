@@ -22,7 +22,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   startTime() async {
-    var _duration = new Duration(seconds: 3);
+    var _duration = new Duration(seconds: 1);
     return new Timer(_duration, navigationPage);
   }
 
@@ -44,7 +44,30 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image(image: AssetImage("assets/web-gif.gif")))
+      body: Center(child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        // child: Image(
+        //   image: AssetImage("assets/delivery_boy.png")
+        // ),
+        // height: 100, 
+        // width: 100 
+        children: <Widget>[
+          Padding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.4)),
+          Image(
+           image: AssetImage("assets/delivery_boy.png"),
+           width: 100,
+           height: 100,
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 20),),
+          Text(
+            "Skyking", 
+            style: TextStyle(
+              fontSize: 50,
+              color: Colors.grey,
+            ),
+          )
+        ],
+      ))
       // body: Column(children: <Widget>[
       //   Image(image: AssetImage("assets/logo.png"),),
       //   Image(image: AssetImage("assets/web-gif.gif"),)
